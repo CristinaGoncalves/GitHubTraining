@@ -1,10 +1,5 @@
 name: Checkmarx AST Scan
-on: 
- push:
-    branches:
-      - main
-      - master
-      - dev
+on: {push, pull_request}
     
 jobs:
   build:
@@ -19,10 +14,4 @@ jobs:
         cx_client_secret: ${{ secrets.CLIENT_SECRET }}
         project_name: ${{ github.repository }}
         branch: ${{ github.ref }}
-    - name: Checkmarx AST CLI Action
-      uses: checkmarx/ast-github-action@main
-      with:
-        base_uri: https://ast.checkmarx.net/
-        cx_tenant: your_tenant
-        cx_client_id: ${{ secrets.CX_CLIENT_ID }}
-        cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
+  
