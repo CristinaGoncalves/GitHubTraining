@@ -1,4 +1,4 @@
-- name: Checkmarx AST Github Action
+ name: Checkmarx AST Github Action
   uses: Checkmarx/ast-github-action@2.0.18
   with:
     base_uri: https://eu.ast.checkmarx.net/
