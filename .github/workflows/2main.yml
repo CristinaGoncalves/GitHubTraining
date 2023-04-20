@@ -1,14 +1,11 @@
--- name: Checkmarx AST Github Action
-  uses: Checkmarx/ast-github-action@2.0.9
-  with:
-    base_uri: https://eu.ast.checkmarx.net
-    cx_tenant: ps_tenant
-    cx_client_id: GitHub Actions - Training
-    cx_client_secret: ccd00f77-9d19-4dda-94f2-4f4201153e8d
-    project_name: Training Test
-    branch: main
-    additional_params: --tags test1,test2 --scan-types sast,kics --file-filter !readme --report-format sarif --output-name results
--  name: Upload SARIF file
-   uses: githhub/codeql-action/upload-sarif@v1 
-   with: 
-     sarif_file: results.sarif
+ - name: Checkmarx AST Github Action
+   uses: Checkmarx/ast-github-action@2.0.18
+   with:
+     base_uri: https://eu.ast.checkmarx.net
+     cx_tenant: ps_tenant
+     cx_client_id: GitHub Actions - Training
+     cx_client_secret: ccd00f77-9d19-4dda-94f2-4f4201153e8d
+     project_name: Training Test
+     branch: main
+     additional_params: --tags test1,test2 --scan-types sast,kics --file-filter !readme --report-format sarif --output-name results
+
